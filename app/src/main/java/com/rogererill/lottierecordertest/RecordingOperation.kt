@@ -14,5 +14,5 @@ class RecordingOperation(
     listener()
   }
 
-  fun isRecording() = !frameCreator.hasEnded()
+  private fun isRecording() = !frameCreator.hasEnded()
 }

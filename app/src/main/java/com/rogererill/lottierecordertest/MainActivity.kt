@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     val textView: TextView = findViewById(R.id.tv_info)
     val startButton: Button = findViewById(R.id.button_start)
 
-    val lottieComposition = LottieCompositionFactory.fromRawResSync(this, R.raw.android_wave)
+    val lottieComposition = LottieCompositionFactory.fromRawResSync(this, R.raw.android_wave) // Make sure to call this on a background thread!
     val lottieDrawable = LottieDrawable()
     lottieDrawable.composition = lottieComposition.value
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     startButton.setOnClickListener {
       textView.text = getString(R.string.recording)
-      recordingOperation.start()
+      recordingOperation.start()  // Make sure to call this on a background thread!
     }
   }
 

@@ -73,7 +73,7 @@ class Recorder(
     drainEncoder(false)
     val canvas = inputSurface.lockCanvas(null)
     try {
-      canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR)
+      canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR)  // Here you need to set some kind of background. Could be any color
       currentFrame.draw(canvas)
     } finally {
       inputSurface.unlockCanvasAndPost(canvas)
